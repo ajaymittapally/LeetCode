@@ -4,18 +4,17 @@
  */
 var firstUniqChar = function(s) {
 
-    let freq = {}
-    for (let i = 0;i<s.length ;i++){
-        freq[s[i]] = (freq[s[i]]||0)+1
-    }
+   let map = {}
+  
+   for(let i = 0;i<s.length;i++){
+    map[s[i]]= (map[s[i]] || 0)+1
+   }
 
-    for (let i =0;i<s.length;i++){
-        if(freq[s[i]] ===1){
-            return i
-        }
-    
+   for(let i=0;i<s.length;i++){
+    if(map[s[i]]===1){
+        return i
     }
+   }
     return -1
-    
     
 };
