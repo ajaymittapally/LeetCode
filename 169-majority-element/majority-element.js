@@ -4,18 +4,17 @@
  */
 var majorityElement = function(nums) {
     //moores algorithm 
-    let candidate = null;
-    let count = 0
+    let candidate = 0;
+    let count =0
     for(let num of nums){
-        if( count == 0){
+        if (count  === 0){
             candidate = num
         }
-        if ( candidate  === num){
+        if(num === candidate ){
             count +=1
-        }
-        else{
+        }else{
             count -=1
         }
     }
-    return candidate 
+    return candidate
 };
