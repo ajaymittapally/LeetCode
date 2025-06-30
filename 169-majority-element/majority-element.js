@@ -3,18 +3,18 @@
  * @return {number}
  */
 var majorityElement = function(nums) {
-    let map ={}
-    let res =0
-    let majority = null
-    for(i =0;i<nums.length;i++){
-        map[nums[i]] = (map[nums[i]] || 0)+1
-
-        if(map[nums[i]] > res ){
-            res = map[nums[i]]
-            majority = nums[i];
+    let candidate = null;
+    let count = 0
+    for(let i =0;i<nums.length;i++){
+        if(count ===0 ){
+            candidate = nums[i] 
         }
+        if(candidate == nums[i]){
+            count +=1
+        }else{
+            count -=1
+        }
+        
     }
-
-   return majority
-    
+    return candidate
 };
