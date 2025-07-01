@@ -13,18 +13,18 @@
 var detectCycle = function(head) {
     let slow = head
     let fast = head
-
-    while (fast && fast.next){
+    while(fast && fast.next){
         slow = slow.next
         fast = fast.next.next
-        if (slow === fast){
+        if(slow === fast){
             let start = head
-            while (start !== slow ){
-                start = start.next
+            while(start !== slow){
                 slow= slow.next
-            }
-            return start
+                start = start.next
+            }return start
         }
+        
+        
     }
     return null
 };
